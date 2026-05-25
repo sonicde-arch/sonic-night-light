@@ -3,7 +3,7 @@
 
 pkgname=sonic-night-light
 pkgver=6.6.5
-pkgrel=1
+pkgrel=2
 #_commit="9402eca9b8b38399e24da784a50dc03e51fd4a70"
 pkgdesc='Sonic applet for audio volume management using PulseAudio'
 arch=(x86_64)

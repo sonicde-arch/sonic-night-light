@@ -1,14 +1,14 @@
 pkgbase = sonic-night-light
-	pkgdesc = Sonic applet for audio volume management using PulseAudio
+	pkgdesc = Helpers for scheduling the dark-light cycle
 	pkgver = 6.6.5
-	pkgrel = 3
+	pkgrel = 4
 	url = https://github.com/Sonic-DE/sonic-night-light
 	arch = x86_64
 	groups = sonicde
 	license = LGPL
-	makedepends = extra-cmake-modules
 	makedepends = ki18n
 	makedepends = qt6-tools
+	makedepends = sonic-frameworks-cmake-modules
 	depends = gcc-libs
 	depends = glibc
 	depends = kconfig
@@ -19,7 +19,6 @@ pkgbase = sonic-night-light
 	depends = sonic-frameworks-core-addons
 	provides = knighttime
 	conflicts = knighttime
-	replaces = knighttime
 	source = sonic-night-light-6.6.5.tar.gz::https://github.com/Sonic-DE/sonic-night-light/archive/refs/tags/6.6.5.tar.gz
 	sha256sums = b055a55571015938a6d3da626552dddd2f86ab2a1ddcc945ae3a3c38b0bed77c
 

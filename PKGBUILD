@@ -1,11 +1,11 @@
 # Maintainer: callmetango
 # Contributor: artist <artist@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=sonic-night-light
 pkgver=6.6.5
 pkgrel=3
-#_commit="9402eca9b8b38399e24da784a50dc03e51fd4a70"
-pkgdesc='Sonic applet for audio volume management using PulseAudio'
+pkgdesc='Helpers for scheduling the dark-light cycle'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-night-light'
 license=(LGPL)
@@ -17,24 +17,22 @@ depends=(gcc-libs
          qt6-base
          qt6-positioning
          sonic-frameworks-core-addons)
-makedepends=(extra-cmake-modules
-             ki18n
-             qt6-tools)
-groups=(sonicde)
-conflicts=(knighttime)
+makedepends=(ki18n
+             qt6-tools
+             sonic-frameworks-cmake-modules)
 provides=(knighttime)
-replaces=(knighttime)
+conflicts=(knighttime)
+groups=(sonicde)
 source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
 sha256sums=('b055a55571015938a6d3da626552dddd2f86ab2a1ddcc945ae3a3c38b0bed77c')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
-    -DBUILD_TESTING=OFF
+    -DBUILD_TESTING=OFF \
+    -DCMAKE_INSTALL_LIBEXECDIR=lib
   cmake --build build
 }
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
-
-  rm -r $pkgdir/usr/lib/systemd
 }

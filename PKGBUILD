@@ -3,8 +3,8 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=sonic-night-light
-pkgver=6.6.5
-pkgrel=4
+pkgver=6.7.0
+pkgrel=1
 pkgdesc='Helpers for scheduling the dark-light cycle'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-night-light'
@@ -24,7 +24,7 @@ provides=(knighttime)
 conflicts=(knighttime)
 groups=(sonicde)
 source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('b055a55571015938a6d3da626552dddd2f86ab2a1ddcc945ae3a3c38b0bed77c')
+sha256sums=('59607b0f8331c1fc83530fc1e7bf74297a5c50030579265989adb8692d1185a9')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
